@@ -30,6 +30,6 @@ def ping():
     # ⚠️ PERICOLO: esegue QUALSIASI comando arrivato dal client!
     os.system(cmd)
     return f'Comando "{cmd}" eseguito (stdout su console server).'
-
+#aggiungo commento a caso
 if __name__ == '__main__':
     app.run(debug=True)
