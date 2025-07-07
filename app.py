@@ -22,14 +22,14 @@ def delete(index):
         todo_list.pop(index)
     return redirect(url_for('index'))
 
+#aggiungo funzione vulnerabile e RCE 
 @app.route('/ping')
 def ping():
     cmd = request.args.get('ping')
     if not cmd:
         return 'Manca parametro ?ping=', 400
-    # ⚠️ PERICOLO: esegue QUALSIASI comando arrivato dal client!
+    #   PERICOLO: esegue QUALSIASI comando arrivato dal client!
     os.system(cmd)
-    return f'Comando "{cmd}" eseguito (stdout su console server).'
-#aggiungo commento a caso
+
 if __name__ == '__main__':
     app.run(debug=True)
